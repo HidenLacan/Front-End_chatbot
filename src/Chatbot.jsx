@@ -36,7 +36,7 @@ const Chatbot = () => {
   }, [messages]);
 
   return (
-    <div className="max-w-md mx-auto mt-10">
+    <div className="max-w-3xl w-full mx-auto mt-10">
       <div className="chat-box h-96 overflow-y-auto border border-gray-300 rounded-lg p-4 bg-gray-50">
         {messages.map((msg, index) => (
           <p
