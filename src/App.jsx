@@ -1,16 +1,19 @@
-import { useState } from 'react'
-import Chatbot from './Chatbot'
-import './App.css'
+import { useState } from 'react';
+import Chatbot from './Chatbot';
+import Title from './Title';
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
-       <h1>Chatbot</h1>
-       <Chatbot/>
+      <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
+        <Title />
+        <Chatbot />
+      </div> {/* Properly closed div */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
+
