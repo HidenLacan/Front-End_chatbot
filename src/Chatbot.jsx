@@ -10,30 +10,27 @@ const Chatbot = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!input.trim()) return;
-
+  
     const userMessage = { role: "user", content: input };
     setMessages((prevMessages) => [...prevMessages, userMessage]);
     setIsLoading(true);
-
+  
     try {
       const response = await axios.post('https://node-completition.onrender.com/api/chat', {
         message: input,
       });
-
+  
       const botMessage = response.data.choices[0].message;
-      setMessages((prevMessages) => [...prevMessages, userMessage, botMessage]);
+      setMessages((prevMessages) => [...prevMessages, botMessage]); // Only append the botMessage here
     } catch (error) {
       console.error("Error fetching bot response", error);
     } finally {
       setIsLoading(false);
     }
-
+  
     setInput("");
   };
-
-  useEffect(() => {
-    chatBoxRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+  
 
   return (
     <div className="max-w-3xl w-full mx-auto mt-10">

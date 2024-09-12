@@ -10,7 +10,7 @@ function App() {
       <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
         <Title />
         <Chatbot />
-      </div> {/* Properly closed div */}
+      </div> 
     </>
   );
 }
